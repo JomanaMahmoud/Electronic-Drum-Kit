@@ -26,3 +26,11 @@ let keys = document.getElementsByClassName("key");
             }
         }
     });
+
+    document.getElementById("menuButton").addEventListener("click", function() {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
+    
+    document.getElementById("closeMenuButton").addEventListener("click", function() {
+        document.getElementById("menu").classList.add("hidden");
+    });
