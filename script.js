@@ -1,36 +1,45 @@
 let keys = document.getElementsByClassName("key");
 
+for (let i = 0; i < keys.length; i++) {
+    keys[i].onclick = function() {
+        playSound(keys[i]);
+    };
+}
+
+document.addEventListener('keydown', function(event) {
+    let keyPressed = event.key.toUpperCase();
+    console.log("Key pressed: " + keyPressed);
+
     for (let i = 0; i < keys.length; i++) {
-        keys[i].onclick = function() {
-            let sound = new Audio(keys[i].getAttribute("data-sound"));
-            sound.play();
-        };
-    }
-
-    document.addEventListener('keydown', function(event) {
-        let keyPressed = event.key.toUpperCase();
-        console.log("Key pressed: " + keyPressed);
         
-        for (let i = 0; i < keys.length; i++) {
-            
-            if (keys[i].innerText === keyPressed) {
-                let soundFile = keys[i].getAttribute("data-sound");
-                console.log("Key matched: " + keyPressed + " Sound file: " + soundFile);
-                
-                if (soundFile) {
-                    let sound = new Audio(soundFile);
-                    sound.play();
-                } else {
-                    console.log("Sound file not found for this key");
-                }
-            }
+        if (keys[i].innerText === keyPressed) {
+            playSound(keys[i]);
         }
-    });
+    }
+});
 
-    document.getElementById("menuButton").addEventListener("click", function() {
-        document.getElementById("menu").classList.toggle("hidden");
-    });
+
+function playSound(key) {
+    let soundFile = key.getAttribute("data-sound");
+    console.log("Playing sound for key: " + key.innerText);
     
-    document.getElementById("closeMenuButton").addEventListener("click", function() {
-        document.getElementById("menu").classList.add("hidden");
-    });
+    if (soundFile) {
+        let sound = new Audio(soundFile);
+        sound.play();
+        key.classList.add('pressed'); 
+
+
+        setTimeout(() => {
+            key.classList.remove('pressed');
+        }, 100); 
+    } else {
+        console.log("Sound file not found for this key");
+    }
+}
+
+document.getElementById("menuButton").addEventListener("click", function() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none'; 
+});
+

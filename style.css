@@ -52,6 +52,9 @@ body h2{
 .key:hover{
 transform: scale(1.1);
 }
+.key.pressed{
+    transform: scale(1.1);
+}
 
 footer {
     display: flex;
