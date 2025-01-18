@@ -44,21 +44,21 @@
 
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 
+
 ## :zap: How to run it? 🕹️
 
-1. **Fork** the repository [WebMasterLog](https://github.com/Avdhesh-Varshney/WebMasterLog) to your own GitHub account.
+1. **Fork** the repository [Electronic Drum Kit](https://github.com/JomanaMahmoud/Electronic-Drum-Kit) to your own GitHub account.
 2. **Clone** the forked repository to your local machine using the command:
    ```bash
-   git clone https://github.com/your-username/WebMasterLog.git
+   git clone https://github.com/your-username/Electronic-Drum-Kit.git
    ```
-3. Navigate to the **vanilla-js** folder:
+3. Navigate to the project folder:
    ```bash
-   cd WebMasterLog/vanilla-js/Electronic-Drum-Kit
+   cd Electronic-Drum-Kit
    ```
 4. Open the **index.html** file with a live server.
 
 Make sure to replace `your-username` with your actual GitHub username!
-
 
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 
